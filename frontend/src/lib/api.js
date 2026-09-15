@@ -109,6 +109,7 @@ export const api = {
   ready: () => request('/ready'),
   modelSummary: () => request('/api/v1/model/summary'),
   districts: () => request('/api/v1/reference/districts'),
+  districtMap: () => request('/api/v1/reference/district-map'),
   seedTypes: () => request('/api/v1/reference/seed-types'),
   inputSchema: () => request('/api/v1/reference/input-schema'),
   levers: () => request('/api/v1/reference/levers'),

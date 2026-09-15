@@ -216,6 +216,26 @@ class SeedTypesResponse(BaseModel):
     intercrop_types: list[str]
 
 
+class DistrictGeoPoint(BaseModel):
+    district: str
+    lat: float
+    lon: float
+    n_plots: int
+    n_plots_with_gps: int
+    mean_yield_kg_ph: float
+    median_yield_kg_ph: float
+    years: list[int]
+
+
+class DistrictMapResponse(BaseModel):
+    generated_at: str
+    unit: str
+    bbox: dict[str, list[float]]
+    center: dict[str, float]
+    performance_range: dict[str, float]
+    districts: list[DistrictGeoPoint]
+
+
 class FieldSpec(BaseModel):
     name: str
     type: str

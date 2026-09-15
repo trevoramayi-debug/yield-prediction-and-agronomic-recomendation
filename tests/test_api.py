@@ -82,6 +82,20 @@ def test_input_schema_marks_only_district_required():
     assert by_name["dap_kg_ph"]["unit"] == "kg/ha"
 
 
+def test_district_map_reference():
+    body = client.get("/api/v1/reference/district-map").json()
+    assert len(body["districts"]) > 40
+    by_name = {d["district"]: d for d in body["districts"]}
+    assert "bungoma" in by_name
+    bungoma = by_name["bungoma"]
+    lat_lo, lat_hi = body["bbox"]["lat"]
+    lon_lo, lon_hi = body["bbox"]["lon"]
+    assert lat_lo <= bungoma["lat"] <= lat_hi
+    assert lon_lo <= bungoma["lon"] <= lon_hi
+    assert body["performance_range"]["min_mean_yield_kg_ph"] <= bungoma["mean_yield_kg_ph"]
+    assert bungoma["mean_yield_kg_ph"] <= body["performance_range"]["max_mean_yield_kg_ph"]
+
+
 def test_openapi_renders():
     paths = client.get("/openapi.json").json()["paths"]
     assert "/api/v1/predict" in paths and "/api/v1/model/summary" in paths

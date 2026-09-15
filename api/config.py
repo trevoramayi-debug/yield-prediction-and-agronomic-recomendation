@@ -70,6 +70,12 @@ class Settings:
         self.min_lift_kg_ph = float(os.getenv("MIN_LIFT_KG_PH", "25"))
         self.min_lift_z = float(os.getenv("MIN_LIFT_Z", "1.645"))
 
+        # Per-district centroid + historical yield, for the map view. Small
+        # (~15 KB) and committed, like the lever curves.
+        self.district_geo_path = Path(os.getenv(
+            "DISTRICT_GEO_PATH",
+            str(self.root / "data" / "api" / "district_geo.json")))
+
         # --- request limits -------------------------------------------------
         self.max_plots_per_request = int(os.getenv("MAX_PLOTS_PER_REQUEST", "500"))
 

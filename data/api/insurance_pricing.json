@@ -1,0 +1,414 @@
+{
+  "generated_at": "2026-09-15T11:39:48.368385+00:00",
+  "model_dir": "data/models/district_v1",
+  "year": 2020,
+  "history_years": [
+    2016,
+    2017,
+    2018,
+    2019
+  ],
+  "note": "2020 is district_v1's held-out test season -- the only season this artefact prices, since it is the only one that model did not train on. The live API pipeline (district_v2) trained on 2016-2020 including this season, so it is deliberately not used here. See this script's docstring.",
+  "districts": [
+    {
+      "district": "kipkelion",
+      "n_plots": 38,
+      "pred_mean": 4623.44,
+      "pred_sd": 837.31,
+      "baseline_mean": 6082.78,
+      "actual_mean": 3901.8
+    },
+    {
+      "district": "ndalu",
+      "n_plots": 194,
+      "pred_mean": 4343.7,
+      "pred_sd": 706.39,
+      "baseline_mean": 4477.22,
+      "actual_mean": 3316.5
+    },
+    {
+      "district": "kabiyet",
+      "n_plots": 105,
+      "pred_mean": 4287.7,
+      "pred_sd": 735.34,
+      "baseline_mean": 4581.03,
+      "actual_mean": 3953.01
+    },
+    {
+      "district": "tinderet",
+      "n_plots": 78,
+      "pred_mean": 4247.35,
+      "pred_sd": 756.44,
+      "baseline_mean": 4730.42,
+      "actual_mean": 4357.18
+    },
+    {
+      "district": "baharini",
+      "n_plots": 105,
+      "pred_mean": 4192.29,
+      "pred_sd": 735.34,
+      "baseline_mean": 4669.98,
+      "actual_mean": 4664.3
+    },
+    {
+      "district": "njoro",
+      "n_plots": 36,
+      "pred_mean": 3823.17,
+      "pred_sd": 845.61,
+      "baseline_mean": 3823.17,
+      "actual_mean": 5351.4
+    },
+    {
+      "district": "keiyo",
+      "n_plots": 122,
+      "pred_mean": 3790.85,
+      "pred_sd": 726.67,
+      "baseline_mean": 3790.85,
+      "actual_mean": 4191.98
+    },
+    {
+      "district": "olkalou",
+      "n_plots": 52,
+      "pred_mean": 3764.96,
+      "pred_sd": 795.88,
+      "baseline_mean": 3764.96,
+      "actual_mean": 3728.66
+    },
+    {
+      "district": "suneka",
+      "n_plots": 90,
+      "pred_mean": 3738.63,
+      "pred_sd": 745.57,
+      "baseline_mean": 4107.57,
+      "actual_mean": 3628.24
+    },
+    {
+      "district": "nyamira",
+      "n_plots": 90,
+      "pred_mean": 3724.93,
+      "pred_sd": 745.57,
+      "baseline_mean": 3732.44,
+      "actual_mean": 3674.35
+    },
+    {
+      "district": "kisii",
+      "n_plots": 92,
+      "pred_mean": 3667.81,
+      "pred_sd": 744.03,
+      "baseline_mean": 3756.92,
+      "actual_mean": 3563.92
+    },
+    {
+      "district": "lugari",
+      "n_plots": 228,
+      "pred_mean": 3667.56,
+      "pred_sd": 701.18,
+      "baseline_mean": 3654.5,
+      "actual_mean": 3019.07
+    },
+    {
+      "district": "cherangany",
+      "n_plots": 206,
+      "pred_mean": 3666.87,
+      "pred_sd": 704.36,
+      "baseline_mean": 3467.77,
+      "actual_mean": 3365.78
+    },
+    {
+      "district": "kimilili",
+      "n_plots": 189,
+      "pred_mean": 3642.28,
+      "pred_sd": 707.31,
+      "baseline_mean": 3707.27,
+      "actual_mean": 3744.7
+    },
+    {
+      "district": "kapsabet",
+      "n_plots": 51,
+      "pred_mean": 3614.15,
+      "pred_sd": 798.14,
+      "baseline_mean": 3526.6,
+      "actual_mean": 3929.15
+    },
+    {
+      "district": "belgut",
+      "n_plots": 125,
+      "pred_mean": 3568.99,
+      "pred_sd": 725.37,
+      "baseline_mean": 3828.0,
+      "actual_mean": 3173.53
+    },
+    {
+      "district": "webuye",
+      "n_plots": 132,
+      "pred_mean": 3550.96,
+      "pred_sd": 722.58,
+      "baseline_mean": 3873.75,
+      "actual_mean": 3579.36
+    },
+    {
+      "district": "gucha",
+      "n_plots": 68,
+      "pred_mean": 3474.02,
+      "pred_sd": 768.25,
+      "baseline_mean": 3824.38,
+      "actual_mean": 3536.33
+    },
+    {
+      "district": "matete",
+      "n_plots": 154,
+      "pred_mean": 3344.33,
+      "pred_sd": 715.39,
+      "baseline_mean": 3413.17,
+      "actual_mean": 2657.77
+    },
+    {
+      "district": "sirisia",
+      "n_plots": 180,
+      "pred_mean": 3312.97,
+      "pred_sd": 709.1,
+      "baseline_mean": 3244.48,
+      "actual_mean": 4111.07
+    },
+    {
+      "district": "kakamega_north",
+      "n_plots": 116,
+      "pred_mean": 3284.9,
+      "pred_sd": 729.45,
+      "baseline_mean": 3304.72,
+      "actual_mean": 3387.79
+    },
+    {
+      "district": "mumias",
+      "n_plots": 164,
+      "pred_mean": 3282.65,
+      "pred_sd": 712.74,
+      "baseline_mean": 3427.91,
+      "actual_mean": 3176.38
+    },
+    {
+      "district": "saboti",
+      "n_plots": 95,
+      "pred_mean": 3262.3,
+      "pred_sd": 741.82,
+      "baseline_mean": 2890.4,
+      "actual_mean": 4335.52
+    },
+    {
+      "district": "borabu",
+      "n_plots": 86,
+      "pred_mean": 3217.45,
+      "pred_sd": 748.88,
+      "baseline_mean": 3114.73,
+      "actual_mean": 3511.46
+    },
+    {
+      "district": "sagana",
+      "n_plots": 93,
+      "pred_mean": 3112.6,
+      "pred_sd": 743.27,
+      "baseline_mean": 3112.6,
+      "actual_mean": 3420.34
+    },
+    {
+      "district": "kakamega_south",
+      "n_plots": 244,
+      "pred_mean": 3095.66,
+      "pred_sd": 699.22,
+      "baseline_mean": 3072.96,
+      "actual_mean": 3256.78
+    },
+    {
+      "district": "chwele",
+      "n_plots": 136,
+      "pred_mean": 3065.81,
+      "pred_sd": 721.1,
+      "baseline_mean": 3012.94,
+      "actual_mean": 3477.75
+    },
+    {
+      "district": "hamisi",
+      "n_plots": 102,
+      "pred_mean": 3018.37,
+      "pred_sd": 737.15,
+      "baseline_mean": 2864.6,
+      "actual_mean": 3005.17
+    },
+    {
+      "district": "butere",
+      "n_plots": 127,
+      "pred_mean": 2982.95,
+      "pred_sd": 724.54,
+      "baseline_mean": 2975.84,
+      "actual_mean": 3051.96
+    },
+    {
+      "district": "sotik",
+      "n_plots": 56,
+      "pred_mean": 2969.77,
+      "pred_sd": 787.6,
+      "baseline_mean": 2969.77,
+      "actual_mean": 3107.78
+    },
+    {
+      "district": "kabondo",
+      "n_plots": 72,
+      "pred_mean": 2956.81,
+      "pred_sd": 763.16,
+      "baseline_mean": 2569.84,
+      "actual_mean": 3043.23
+    },
+    {
+      "district": "bungoma",
+      "n_plots": 191,
+      "pred_mean": 2949.74,
+      "pred_sd": 706.94,
+      "baseline_mean": 2830.23,
+      "actual_mean": 3133.44
+    },
+    {
+      "district": "kenol",
+      "n_plots": 56,
+      "pred_mean": 2885.09,
+      "pred_sd": 787.6,
+      "baseline_mean": 2885.09,
+      "actual_mean": 3148.98
+    },
+    {
+      "district": "teso",
+      "n_plots": 213,
+      "pred_mean": 2862.03,
+      "pred_sd": 703.28,
+      "baseline_mean": 2700.61,
+      "actual_mean": 2470.65
+    },
+    {
+      "district": "rongo",
+      "n_plots": 86,
+      "pred_mean": 2847.25,
+      "pred_sd": 748.88,
+      "baseline_mean": 2777.46,
+      "actual_mean": 3131.54
+    },
+    {
+      "district": "imenti",
+      "n_plots": 56,
+      "pred_mean": 2841.0,
+      "pred_sd": 787.6,
+      "baseline_mean": 2841.0,
+      "actual_mean": 1184.52
+    },
+    {
+      "district": "vihiga",
+      "n_plots": 173,
+      "pred_mean": 2777.37,
+      "pred_sd": 710.61,
+      "baseline_mean": 2660.67,
+      "actual_mean": 2908.29
+    },
+    {
+      "district": "nambale",
+      "n_plots": 123,
+      "pred_mean": 2777.01,
+      "pred_sd": 726.23,
+      "baseline_mean": 2623.89,
+      "actual_mean": 2875.95
+    },
+    {
+      "district": "gem",
+      "n_plots": 257,
+      "pred_mean": 2748.79,
+      "pred_sd": 697.8,
+      "baseline_mean": 2660.3,
+      "actual_mean": 2743.1
+    },
+    {
+      "district": "awendo",
+      "n_plots": 132,
+      "pred_mean": 2729.55,
+      "pred_sd": 722.58,
+      "baseline_mean": 2548.59,
+      "actual_mean": 2702.16
+    },
+    {
+      "district": "migori",
+      "n_plots": 99,
+      "pred_mean": 2634.93,
+      "pred_sd": 739.08,
+      "baseline_mean": 2757.53,
+      "actual_mean": 2709.53
+    },
+    {
+      "district": "masaba",
+      "n_plots": 89,
+      "pred_mean": 2552.35,
+      "pred_sd": 746.37,
+      "baseline_mean": 2232.58,
+      "actual_mean": 2756.66
+    },
+    {
+      "district": "nyando",
+      "n_plots": 45,
+      "pred_mean": 2537.65,
+      "pred_sd": 813.63,
+      "baseline_mean": 1569.4,
+      "actual_mean": 2640.98
+    },
+    {
+      "district": "manyatta",
+      "n_plots": 57,
+      "pred_mean": 2491.85,
+      "pred_sd": 785.7,
+      "baseline_mean": 2491.85,
+      "actual_mean": 1623.74
+    },
+    {
+      "district": "rachuonyo",
+      "n_plots": 164,
+      "pred_mean": 2476.43,
+      "pred_sd": 712.74,
+      "baseline_mean": 2224.89,
+      "actual_mean": 2689.68
+    },
+    {
+      "district": "greenshamba",
+      "n_plots": 107,
+      "pred_mean": 2377.28,
+      "pred_sd": 734.18,
+      "baseline_mean": 2377.28,
+      "actual_mean": 2103.54
+    },
+    {
+      "district": "ndhiwa",
+      "n_plots": 116,
+      "pred_mean": 2345.06,
+      "pred_sd": 729.45,
+      "baseline_mean": 2345.06,
+      "actual_mean": 2329.72
+    },
+    {
+      "district": "busia",
+      "n_plots": 211,
+      "pred_mean": 2336.02,
+      "pred_sd": 703.58,
+      "baseline_mean": 2056.03,
+      "actual_mean": 2527.0
+    },
+    {
+      "district": "alego",
+      "n_plots": 245,
+      "pred_mean": 2205.08,
+      "pred_sd": 699.1,
+      "baseline_mean": 1980.05,
+      "actual_mean": 2293.85
+    },
+    {
+      "district": "serabo",
+      "n_plots": 144,
+      "pred_mean": 2100.7,
+      "pred_sd": 718.39,
+      "baseline_mean": 2100.7,
+      "actual_mean": 1627.43
+    }
+  ]
+}

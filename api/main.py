@@ -23,7 +23,7 @@ from api.config import get_settings
 from api.curves import CurvesUnavailable, get_curves
 from api.defaults import DefaultsUnavailable, get_defaults
 from api.registry import ModelUnavailable, get_registry
-from api.routers import health, model, predict, recommend, reference
+from api.routers import health, insurance, model, predict, recommend, reference
 
 logging.basicConfig(
     level=os.getenv("LOG_LEVEL", "INFO").upper(),
@@ -134,6 +134,7 @@ app.include_router(predict.router)
 app.include_router(recommend.router)
 app.include_router(model.router)
 app.include_router(reference.router)
+app.include_router(insurance.router)
 
 
 @app.exception_handler(DefaultsUnavailable)

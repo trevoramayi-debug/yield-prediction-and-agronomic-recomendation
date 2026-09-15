@@ -391,3 +391,33 @@ class LeversResponse(BaseModel):
     method: str
     fitted_on: dict[str, Any] = Field(default_factory=dict)
     levers: list[LeverSpec]
+
+
+# ---------------------------------------------------------------------------
+# area-yield insurance pricing
+# ---------------------------------------------------------------------------
+class DistrictPremium(BaseModel):
+    district: str
+    n_plots: int
+    pred_mean: float = Field(..., description="Forecast district-season mean yield, kg/ha.")
+    baseline_mean: float = Field(..., description="District's own historical average yield, kg/ha.")
+    actual_mean: float | None = Field(
+        None, description="What the district actually averaged that season, kg/ha -- "
+                          "shown because this artefact only prices an already-observed "
+                          "season; never available when pricing a season ahead of time.")
+    trigger_yield: float = Field(..., description="Payout line: trigger_pct * baseline_mean, kg/ha.")
+    payout_probability: float = Field(..., description="Modelled chance the season falls below the trigger.")
+    expected_shortfall: float = Field(..., description="Expected shortfall below the trigger, kg/ha.")
+    pure_premium_pct: float = Field(..., description="Expected loss cost as a % of the trigger yield, before loading.")
+    premium_pct: float = Field(..., description="Rate actually charged: pure premium plus the loading.")
+
+
+class InsurancePricingResponse(BaseModel):
+    year: int = Field(..., description="Season priced. Fixed at the model's held-out test "
+                                       "season -- see the note field.")
+    model_dir: str
+    trigger_pct: float
+    loading_pct: float
+    generated_at: str
+    note: str
+    districts: list[DistrictPremium]

@@ -33,7 +33,7 @@ would let the model's forecast error masquerade as insured risk, on top of the b
 
 See Documentation/kenya_maize_district_model_deployment.md for the model's validated skill
 (district-season R2 0.22-0.59; no validated skill at the plot/farm level, so this is priced
-and settled at the district level only, same as scripts/district_risk_index.py).
+and settled at the district level only).
 
 THE NORMAL APPROXIMATION
 -------------------------

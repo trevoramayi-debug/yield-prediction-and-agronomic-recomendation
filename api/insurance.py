@@ -68,6 +68,33 @@ class InsurancePricing:
             })
         return sorted(rows, key=lambda r: r["premium_pct"], reverse=True)
 
+    def settle(self, trigger_pct: float, price_per_kg: float) -> list[dict]:
+        """Settle every district against its actual measured 2020 yield.
+
+        Deterministic, not probabilistic: unlike price(), it never touches
+        pred_mean/pred_sd -- it compares trigger_yield to actual_mean directly.
+        """
+        rows = []
+        for d in self.districts:
+            trigger_yield = trigger_pct * d["baseline_mean"]
+            actual = d.get("actual_mean")
+            settled = actual is not None
+            payout_kg_ph = max(trigger_yield - actual, 0.0) if settled else None
+            payout_pct = (payout_kg_ph / trigger_yield * 100
+                         if settled and trigger_yield else 0.0 if settled else None)
+            sum_insured_per_ha = trigger_yield * price_per_kg
+            payout_amount_per_ha = payout_kg_ph * price_per_kg if settled else None
+            rows.append({
+                **d,
+                "trigger_yield": round(trigger_yield, 2),
+                "settled": settled,
+                "payout_kg_ph": round(payout_kg_ph, 2) if settled else None,
+                "payout_pct": round(payout_pct, 2) if settled else None,
+                "sum_insured_per_ha": round(sum_insured_per_ha, 2),
+                "payout_amount_per_ha": round(payout_amount_per_ha, 2) if settled else None,
+            })
+        return sorted(rows, key=lambda r: (r["payout_amount_per_ha"] or 0), reverse=True)
+
 
 @lru_cache(maxsize=1)
 def get_insurance_pricing() -> InsurancePricing:

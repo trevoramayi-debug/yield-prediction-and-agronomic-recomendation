@@ -441,3 +441,36 @@ class InsurancePricingResponse(BaseModel):
     generated_at: str
     note: str
     districts: list[DistrictPremium]
+
+
+# ---------------------------------------------------------------------------
+# area-yield insurance settlement (backtest)
+# ---------------------------------------------------------------------------
+class DistrictPayout(BaseModel):
+    district: str
+    n_plots: int
+    baseline_mean: float = Field(..., description="District's own historical average yield, kg/ha.")
+    actual_mean: float | None = Field(
+        None, description="What the district actually averaged that season, kg/ha -- the "
+                          "settlement basis. None when no measured outcome is available.")
+    trigger_yield: float = Field(..., description="Payout line: trigger_pct * baseline_mean, kg/ha.")
+    settled: bool = Field(..., description="False when actual_mean is unavailable and this "
+                                           "district could not be settled.")
+    payout_kg_ph: float | None = Field(
+        None, description="Shortfall actually owed: max(trigger_yield - actual_mean, 0), kg/ha.")
+    payout_pct: float | None = Field(
+        None, description="payout_kg_ph as a % of the trigger yield.")
+    sum_insured_per_ha: float = Field(
+        ..., description="Maximum possible payout per hectare: trigger_yield * price_per_kg.")
+    payout_amount_per_ha: float | None = Field(
+        None, description="Money actually owed per hectare: payout_kg_ph * price_per_kg.")
+
+
+class InsurancePayoutResponse(BaseModel):
+    year: int = Field(..., description="Season settled. Fixed at the model's held-out test "
+                                       "season -- see the note field.")
+    trigger_pct: float
+    price_per_kg: float
+    generated_at: str
+    note: str
+    districts: list[DistrictPayout]

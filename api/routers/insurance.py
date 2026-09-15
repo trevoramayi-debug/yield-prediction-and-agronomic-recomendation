@@ -11,7 +11,8 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException, Query, status
 
 from api.insurance import InsurancePricingUnavailable, get_insurance_pricing
-from api.schemas import DistrictPremium, ErrorResponse, InsurancePricingResponse
+from api.schemas import (DistrictPayout, DistrictPremium, ErrorResponse,
+                         InsurancePayoutResponse, InsurancePricingResponse)
 
 router = APIRouter(prefix="/api/v1/insurance", tags=["insurance"])
 
@@ -50,4 +51,34 @@ def districts(
         generated_at=pricing.generated_at,
         note=f"{pricing.note} {PRICING_NOTE}",
         districts=[DistrictPremium(**row) for row in rows],
+    )
+
+
+@router.get("/payouts", response_model=InsurancePayoutResponse,
+            responses={503: {"model": ErrorResponse}, 422: {"model": ErrorResponse}},
+            summary="Area-yield insurance settlement (backtest) per district")
+def payouts(
+    trigger_pct: float = Query(
+        0.65, gt=0, le=1,
+        description="Threshold Yield as a fraction of each district's historical average "
+                    "yield -- the payout line."),
+    price_per_kg: float = Query(
+        50.0, gt=0,
+        description="Maize price used to convert the physical shortfall into a payout, "
+                    "e.g. KES/kg. Not derived from any data this project ships."),
+) -> InsurancePayoutResponse:
+    try:
+        pricing = get_insurance_pricing()
+    except InsurancePricingUnavailable as exc:
+        raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, str(exc)) from exc
+
+    rows = pricing.settle(trigger_pct=trigger_pct, price_per_kg=price_per_kg)
+
+    return InsurancePayoutResponse(
+        year=pricing.year,
+        trigger_pct=trigger_pct,
+        price_per_kg=price_per_kg,
+        generated_at=pricing.generated_at,
+        note=pricing.note,
+        districts=[DistrictPayout(**row) for row in rows],
     )

@@ -382,3 +382,73 @@ td.num, th.num { text-align: right; font-family: var(--font-mono); font-variant-
   .mobile-nav a.active { color: var(--maize); background: var(--maize-dim); text-decoration: none; }
 }
 @media (min-width: 861px) { .mobile-nav { display: none; } }
+
+/* --- district map --------------------------------------------------------
+   Leaflet + OpenStreetMap tiles, with a district Voronoi tessellation drawn
+   on top (see components/DistrictMap.jsx). The tile pane gets a colour-flip
+   filter in dark mode -- a plain raster basemap otherwise reads as a bright
+   rectangle punched through the rest of the page.
+--------------------------------------------------------------------------- */
+.maize-map {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.maize-map .leaflet-container {
+  background: var(--surface-2);
+  font-family: var(--font-body);
+}
+:root[data-theme='dark'] .maize-map .leaflet-tile-pane {
+  filter: brightness(0.62) invert(1) contrast(0.88) hue-rotate(200deg) saturate(0.35);
+}
+.maize-map .leaflet-control-zoom a {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+}
+.maize-map .leaflet-control-attribution {
+  background: rgba(15, 29, 35, 0.65) !important;
+  color: var(--ink-2) !important;
+  font-size: 0.62rem !important;
+}
+.maize-map .leaflet-control-attribution a { color: var(--ink-2) !important; }
+
+.maize-map-tip.leaflet-tooltip {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  box-shadow: var(--shadow);
+  font-size: 0.76rem;
+  line-height: 1.4;
+  padding: 8px 10px;
+}
+.maize-map-tip.leaflet-tooltip::before { border-top-color: var(--line); }
+
+/* Pulsing marker for a forecast result -- a divIcon, so it needs no image asset. */
+.district-pulse { position: relative; }
+.district-pulse .pulse-dot {
+  position: absolute; top: 5px; left: 5px; width: 8px; height: 8px;
+  border-radius: 50%; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+.district-pulse .pulse-ring {
+  position: absolute; top: 0; left: 0; width: 18px; height: 18px;
+  border-radius: 50%; border: 2px solid;
+  animation: map-pulse 1.6s ease-out infinite;
+}
+@keyframes map-pulse {
+  0% { transform: scale(0.4); opacity: 0.9; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+.map-legend {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 10px; color: var(--muted);
+}
+.map-legend-bar {
+  width: 120px; height: 8px; border-radius: 999px;
+  background: linear-gradient(90deg, hsl(108, 32%, 90%), hsl(142, 62%, 21%));
+  border: 1px solid var(--line-soft);
+}

@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react'
 import PlotForm, { EMPTY_PLOT, toApiPlot } from '../components/PlotForm'
+import DistrictMap, { MapLegend } from '../components/DistrictMap'
 import { Banner, Card, ErrorState, IntervalBar, Loading, Pill, Stat } from '../components/ui'
 import { IconForecast, IconPlus, IconTrash } from '../components/Icons'
 import { api } from '../lib/api'
@@ -16,6 +17,7 @@ import { districtName, kg } from '../lib/format'
 export default function Forecast() {
   const { data: districtsData } = useReference('districts', api.districts)
   const { data: schema } = useReference('input-schema', api.inputSchema)
+  const { data: geo } = useReference('district-map', api.districtMap)
 
   const [draft, setDraft] = useState({ ...EMPTY_PLOT })
   const [batch, setBatch] = useState([])
@@ -54,6 +56,19 @@ export default function Forecast() {
           you leave blank is filled from that district's own history, so a sparse request still scores.
         </p>
       </header>
+
+      {geo && (
+        <Card title="District map"
+          aside={<span className="tiny" style={{ color: 'var(--muted)' }}>Click a district to set it below</span>}>
+          <DistrictMap
+            geo={geo}
+            selectedDistrict={draft.district || null}
+            resultDistricts={result?.districts || null}
+            onSelectDistrict={(d) => setDraft((cur) => ({ ...cur, district: d }))}
+          />
+          <MapLegend range={geo.performance_range} />
+        </Card>
+      )}
 
       <form onSubmit={run} className="stack">
         <Card title="Plot details"

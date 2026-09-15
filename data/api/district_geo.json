@@ -1,0 +1,770 @@
+{
+  "generated_at": "2026-09-15T09:24:36.202168+00:00",
+  "source": {
+    "rows": 23674,
+    "districts": 51,
+    "file": "data/cleaned/kenya_maize_cleaned.csv"
+  },
+  "unit": "kg/ha",
+  "bbox": {
+    "lat": [
+      -4.9,
+      5.1
+    ],
+    "lon": [
+      33.5,
+      42.0
+    ]
+  },
+  "center": {
+    "lat": 0.05126,
+    "lon": 34.80484
+  },
+  "performance_range": {
+    "min_mean_yield_kg_ph": 1184.5,
+    "max_mean_yield_kg_ph": 5751.3
+  },
+  "districts": [
+    {
+      "district": "aldai",
+      "lat": 0.12301,
+      "lon": 34.89279,
+      "n_plots": 210,
+      "n_plots_with_gps": 201,
+      "mean_yield_kg_ph": 3708.2,
+      "median_yield_kg_ph": 3508.9,
+      "years": [
+        2016,
+        2017
+      ]
+    },
+    {
+      "district": "alego",
+      "lat": 0.04671,
+      "lon": 34.3205,
+      "n_plots": 1062,
+      "n_plots_with_gps": 1008,
+      "mean_yield_kg_ph": 2052.4,
+      "median_yield_kg_ph": 1885.8,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "awendo",
+      "lat": -0.94627,
+      "lon": 34.51064,
+      "n_plots": 235,
+      "n_plots_with_gps": 227,
+      "mean_yield_kg_ph": 2634.9,
+      "median_yield_kg_ph": 2486.0,
+      "years": [
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "baharini",
+      "lat": 0.55663,
+      "lon": 35.20394,
+      "n_plots": 196,
+      "n_plots_with_gps": 195,
+      "mean_yield_kg_ph": 4666.9,
+      "median_yield_kg_ph": 4524.2,
+      "years": [
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "belgut",
+      "lat": -0.40462,
+      "lon": 35.12006,
+      "n_plots": 309,
+      "n_plots_with_gps": 308,
+      "mean_yield_kg_ph": 3563.2,
+      "median_yield_kg_ph": 3186.4,
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "borabu",
+      "lat": -0.89468,
+      "lon": 34.76249,
+      "n_plots": 257,
+      "n_plots_with_gps": 255,
+      "mean_yield_kg_ph": 3247.5,
+      "median_yield_kg_ph": 3194.4,
+      "years": [
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "bungoma",
+      "lat": 0.50873,
+      "lon": 34.55415,
+      "n_plots": 380,
+      "n_plots_with_gps": 355,
+      "mean_yield_kg_ph": 2982.6,
+      "median_yield_kg_ph": 2753.4,
+      "years": [
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "busia",
+      "lat": 0.32124,
+      "lon": 34.1999,
+      "n_plots": 1089,
+      "n_plots_with_gps": 1083,
+      "mean_yield_kg_ph": 2147.3,
+      "median_yield_kg_ph": 1861.1,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "butere",
+      "lat": 0.23342,
+      "lon": 34.49383,
+      "n_plots": 931,
+      "n_plots_with_gps": 922,
+      "mean_yield_kg_ph": 2986.2,
+      "median_yield_kg_ph": 2749.9,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "cherangany",
+      "lat": 1.03368,
+      "lon": 35.14361,
+      "n_plots": 657,
+      "n_plots_with_gps": 655,
+      "mean_yield_kg_ph": 3435.8,
+      "median_yield_kg_ph": 3340.2,
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "chwele",
+      "lat": 0.63791,
+      "lon": 34.52103,
+      "n_plots": 661,
+      "n_plots_with_gps": 629,
+      "mean_yield_kg_ph": 3108.6,
+      "median_yield_kg_ph": 2861.0,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "gem",
+      "lat": 0.12526,
+      "lon": 34.49303,
+      "n_plots": 1110,
+      "n_plots_with_gps": 1071,
+      "mean_yield_kg_ph": 2679.5,
+      "median_yield_kg_ph": 2524.2,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "greenshamba",
+      "lat": -0.47227,
+      "lon": 34.60114,
+      "n_plots": 107,
+      "n_plots_with_gps": 103,
+      "mean_yield_kg_ph": 2103.5,
+      "median_yield_kg_ph": 1833.3,
+      "years": [
+        2020
+      ]
+    },
+    {
+      "district": "gucha",
+      "lat": -0.77034,
+      "lon": 34.72304,
+      "n_plots": 461,
+      "n_plots_with_gps": 458,
+      "mean_yield_kg_ph": 3781.9,
+      "median_yield_kg_ph": 3602.5,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "hamisi",
+      "lat": 0.09585,
+      "lon": 34.82671,
+      "n_plots": 287,
+      "n_plots_with_gps": 274,
+      "mean_yield_kg_ph": 2914.6,
+      "median_yield_kg_ph": 2743.0,
+      "years": [
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "imenti",
+      "lat": 0.08125,
+      "lon": 37.57851,
+      "n_plots": 56,
+      "n_plots_with_gps": 56,
+      "mean_yield_kg_ph": 1184.5,
+      "median_yield_kg_ph": 892.3,
+      "years": [
+        2020
+      ]
+    },
+    {
+      "district": "kabiyet",
+      "lat": 0.36605,
+      "lon": 35.15616,
+      "n_plots": 455,
+      "n_plots_with_gps": 454,
+      "mean_yield_kg_ph": 4436.1,
+      "median_yield_kg_ph": 4256.8,
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "kabondo",
+      "lat": -0.41747,
+      "lon": 34.92613,
+      "n_plots": 571,
+      "n_plots_with_gps": 557,
+      "mean_yield_kg_ph": 2629.5,
+      "median_yield_kg_ph": 2472.2,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "kakamega_north",
+      "lat": 0.24795,
+      "lon": 34.74542,
+      "n_plots": 837,
+      "n_plots_with_gps": 828,
+      "mean_yield_kg_ph": 3316.2,
+      "median_yield_kg_ph": 3173.3,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "kakamega_south",
+      "lat": 0.21302,
+      "lon": 34.75518,
+      "n_plots": 791,
+      "n_plots_with_gps": 787,
+      "mean_yield_kg_ph": 3129.7,
+      "median_yield_kg_ph": 2999.9,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "kapsabet",
+      "lat": 0.1446,
+      "lon": 35.02795,
+      "n_plots": 239,
+      "n_plots_with_gps": 233,
+      "mean_yield_kg_ph": 3612.5,
+      "median_yield_kg_ph": 3472.1,
+      "years": [
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "keiyo",
+      "lat": 0.34271,
+      "lon": 35.43695,
+      "n_plots": 122,
+      "n_plots_with_gps": 122,
+      "mean_yield_kg_ph": 4192.0,
+      "median_yield_kg_ph": 3958.2,
+      "years": [
+        2020
+      ]
+    },
+    {
+      "district": "kenol",
+      "lat": -0.84176,
+      "lon": 37.05135,
+      "n_plots": 56,
+      "n_plots_with_gps": 56,
+      "mean_yield_kg_ph": 3149.0,
+      "median_yield_kg_ph": 2874.9,
+      "years": [
+        2020
+      ]
+    },
+    {
+      "district": "kimilili",
+      "lat": 0.76435,
+      "lon": 34.66577,
+      "n_plots": 803,
+      "n_plots_with_gps": 792,
+      "mean_yield_kg_ph": 3716.1,
+      "median_yield_kg_ph": 3415.3,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "kipkelion",
+      "lat": -0.14566,
+      "lon": 35.52818,
+      "n_plots": 250,
+      "n_plots_with_gps": 249,
+      "mean_yield_kg_ph": 5751.3,
+      "median_yield_kg_ph": 5867.9,
+      "years": [
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "kisii",
+      "lat": -0.57868,
+      "lon": 34.80484,
+      "n_plots": 440,
+      "n_plots_with_gps": 432,
+      "mean_yield_kg_ph": 3716.6,
+      "median_yield_kg_ph": 3586.8,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "lugari",
+      "lat": 0.75019,
+      "lon": 35.04387,
+      "n_plots": 938,
+      "n_plots_with_gps": 917,
+      "mean_yield_kg_ph": 3500.0,
+      "median_yield_kg_ph": 3241.6,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "manyatta",
+      "lat": -0.53818,
+      "lon": 37.51457,
+      "n_plots": 57,
+      "n_plots_with_gps": 57,
+      "mean_yield_kg_ph": 1623.7,
+      "median_yield_kg_ph": 1333.3,
+      "years": [
+        2020
+      ]
+    },
+    {
+      "district": "masaba",
+      "lat": -0.80603,
+      "lon": 34.91303,
+      "n_plots": 445,
+      "n_plots_with_gps": 422,
+      "mean_yield_kg_ph": 2337.4,
+      "median_yield_kg_ph": 2015.9,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "matete",
+      "lat": 0.52101,
+      "lon": 34.84735,
+      "n_plots": 783,
+      "n_plots_with_gps": 770,
+      "mean_yield_kg_ph": 3264.6,
+      "median_yield_kg_ph": 3062.4,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "migori",
+      "lat": -1.01982,
+      "lon": 34.46737,
+      "n_plots": 789,
+      "n_plots_with_gps": 783,
+      "mean_yield_kg_ph": 2751.5,
+      "median_yield_kg_ph": 2472.2,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "mumias",
+      "lat": 0.3449,
+      "lon": 34.57177,
+      "n_plots": 343,
+      "n_plots_with_gps": 335,
+      "mean_yield_kg_ph": 3307.6,
+      "median_yield_kg_ph": 3173.5,
+      "years": [
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "nambale",
+      "lat": 0.4309,
+      "lon": 34.25084,
+      "n_plots": 538,
+      "n_plots_with_gps": 530,
+      "mean_yield_kg_ph": 2681.5,
+      "median_yield_kg_ph": 2604.8,
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "ndalu",
+      "lat": 0.91655,
+      "lon": 34.90833,
+      "n_plots": 872,
+      "n_plots_with_gps": 866,
+      "mean_yield_kg_ph": 4219.0,
+      "median_yield_kg_ph": 3963.8,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "ndhiwa",
+      "lat": -0.70424,
+      "lon": 34.36827,
+      "n_plots": 116,
+      "n_plots_with_gps": 116,
+      "mean_yield_kg_ph": 2329.7,
+      "median_yield_kg_ph": 2218.7,
+      "years": [
+        2020
+      ]
+    },
+    {
+      "district": "njoro",
+      "lat": -0.56018,
+      "lon": 36.01552,
+      "n_plots": 36,
+      "n_plots_with_gps": 36,
+      "mean_yield_kg_ph": 5351.4,
+      "median_yield_kg_ph": 5576.2,
+      "years": [
+        2020
+      ]
+    },
+    {
+      "district": "nyamira",
+      "lat": -0.54004,
+      "lon": 34.96706,
+      "n_plots": 479,
+      "n_plots_with_gps": 475,
+      "mean_yield_kg_ph": 3721.5,
+      "median_yield_kg_ph": 3562.4,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "nyando",
+      "lat": -0.3122,
+      "lon": 34.97717,
+      "n_plots": 66,
+      "n_plots_with_gps": 62,
+      "mean_yield_kg_ph": 2300.0,
+      "median_yield_kg_ph": 1916.6,
+      "years": [
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "olkalou",
+      "lat": -0.27744,
+      "lon": 36.32683,
+      "n_plots": 52,
+      "n_plots_with_gps": 52,
+      "mean_yield_kg_ph": 3728.7,
+      "median_yield_kg_ph": 3479.1,
+      "years": [
+        2020
+      ]
+    },
+    {
+      "district": "rachuonyo",
+      "lat": -0.49584,
+      "lon": 34.75405,
+      "n_plots": 615,
+      "n_plots_with_gps": 614,
+      "mean_yield_kg_ph": 2348.8,
+      "median_yield_kg_ph": 2131.9,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "rongo",
+      "lat": -0.70157,
+      "lon": 34.54993,
+      "n_plots": 642,
+      "n_plots_with_gps": 631,
+      "mean_yield_kg_ph": 2824.9,
+      "median_yield_kg_ph": 2573.9,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "saboti",
+      "lat": 0.81522,
+      "lon": 34.85079,
+      "n_plots": 322,
+      "n_plots_with_gps": 320,
+      "mean_yield_kg_ph": 3316.8,
+      "median_yield_kg_ph": 3072.8,
+      "years": [
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "sagana",
+      "lat": -0.54759,
+      "lon": 37.11808,
+      "n_plots": 93,
+      "n_plots_with_gps": 92,
+      "mean_yield_kg_ph": 3420.3,
+      "median_yield_kg_ph": 3222.1,
+      "years": [
+        2020
+      ]
+    },
+    {
+      "district": "serabo",
+      "lat": -0.10509,
+      "lon": 34.38986,
+      "n_plots": 144,
+      "n_plots_with_gps": 124,
+      "mean_yield_kg_ph": 1627.4,
+      "median_yield_kg_ph": 1319.4,
+      "years": [
+        2020
+      ]
+    },
+    {
+      "district": "sirisia",
+      "lat": 0.75623,
+      "lon": 34.46804,
+      "n_plots": 754,
+      "n_plots_with_gps": 729,
+      "mean_yield_kg_ph": 3451.4,
+      "median_yield_kg_ph": 3297.7,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "sotik",
+      "lat": -0.73936,
+      "lon": 35.22279,
+      "n_plots": 56,
+      "n_plots_with_gps": 52,
+      "mean_yield_kg_ph": 3107.8,
+      "median_yield_kg_ph": 3180.5,
+      "years": [
+        2020
+      ]
+    },
+    {
+      "district": "suneka",
+      "lat": -0.67767,
+      "lon": 34.70266,
+      "n_plots": 318,
+      "n_plots_with_gps": 314,
+      "mean_yield_kg_ph": 3971.9,
+      "median_yield_kg_ph": 3687.1,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "teso",
+      "lat": 0.5917,
+      "lon": 34.36357,
+      "n_plots": 794,
+      "n_plots_with_gps": 714,
+      "mean_yield_kg_ph": 2638.9,
+      "median_yield_kg_ph": 2451.7,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "tinderet",
+      "lat": 0.00468,
+      "lon": 35.27507,
+      "n_plots": 304,
+      "n_plots_with_gps": 304,
+      "mean_yield_kg_ph": 4634.7,
+      "median_yield_kg_ph": 4460.9,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "vihiga",
+      "lat": 0.05126,
+      "lon": 34.6757,
+      "n_plots": 778,
+      "n_plots_with_gps": 772,
+      "mean_yield_kg_ph": 2715.7,
+      "median_yield_kg_ph": 2486.0,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    },
+    {
+      "district": "webuye",
+      "lat": 0.67285,
+      "lon": 34.74559,
+      "n_plots": 711,
+      "n_plots_with_gps": 705,
+      "mean_yield_kg_ph": 3819.1,
+      "median_yield_kg_ph": 3726.1,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020
+      ]
+    }
+  ]
+}

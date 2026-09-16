@@ -58,9 +58,23 @@ class Settings:
             "LEVER_CURVES_PATH",
             str(self.root / "data" / "api" / "lever_curves.json")))
 
+        # Precomputed district-season stats for area-yield insurance pricing
+        # (built offline by scripts/build_insurance_pricing_artifact.py, since
+        # it needs the full historical plot-level frame this service does not
+        # ship). Small and committed, same rationale as lever_curves_path.
+        self.insurance_pricing_path = Path(os.getenv(
+            "INSURANCE_PRICING_PATH",
+            str(self.root / "data" / "api" / "insurance_pricing.json")))
+
         # Gates a recommendation must clear before it is offered at all.
         self.min_lift_kg_ph = float(os.getenv("MIN_LIFT_KG_PH", "25"))
         self.min_lift_z = float(os.getenv("MIN_LIFT_Z", "1.645"))
+
+        # Per-district centroid + historical yield, for the map view. Small
+        # (~15 KB) and committed, like the lever curves.
+        self.district_geo_path = Path(os.getenv(
+            "DISTRICT_GEO_PATH",
+            str(self.root / "data" / "api" / "district_geo.json")))
 
         # --- request limits -------------------------------------------------
         self.max_plots_per_request = int(os.getenv("MAX_PLOTS_PER_REQUEST", "500"))

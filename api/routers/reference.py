@@ -10,8 +10,10 @@ from fastapi import APIRouter, HTTPException, status
 
 from api.curves import CurvesUnavailable, get_curves
 from api.defaults import DefaultsUnavailable, get_defaults
-from api.schemas import (DistrictsResponse, ErrorResponse, FieldSpec, InputSchemaResponse,
-                         LeverSpec, LeversResponse, SeedTypesResponse)
+from api.geo import DistrictGeoUnavailable, get_district_geo
+from api.schemas import (DistrictGeoPoint, DistrictMapResponse, DistrictsResponse,
+                         ErrorResponse, FieldSpec, InputSchemaResponse, LeverSpec,
+                         LeversResponse, SeedTypesResponse)
 
 router = APIRouter(prefix="/api/v1/reference", tags=["reference"])
 
@@ -31,6 +33,34 @@ def districts() -> DistrictsResponse:
     return DistrictsResponse(count=len(defaults.districts),
                              districts=defaults.districts,
                              seasons=defaults.years)
+
+
+@router.get("/district-map", response_model=DistrictMapResponse,
+            responses={503: {"model": ErrorResponse}},
+            summary="Per-district location and historical yield, for the map view")
+def district_map() -> DistrictMapResponse:
+    """Where each district sits and how it has performed.
+
+    There is no official district boundary file in this repo, so a district
+    is a point here -- the median GPS of its own plots -- rather than a
+    polygon. `bbox` is the same Kenya coordinate box every field GPS pair was
+    validated against during cleaning, so a map can frame the country without
+    a shapefile; a frontend wanting filled regions tessellates these points
+    itself (e.g. a Voronoi diagram clipped to `bbox`).
+    """
+    try:
+        geo = get_district_geo()
+    except DistrictGeoUnavailable as exc:
+        raise HTTPException(status.HTTP_503_SERVICE_UNAVAILABLE, str(exc)) from exc
+
+    return DistrictMapResponse(
+        generated_at=geo.generated_at,
+        unit=geo.unit,
+        bbox=geo.bbox,
+        center=geo.center,
+        performance_range=geo.performance_range,
+        districts=[DistrictGeoPoint(**d) for d in geo.districts],
+    )
 
 
 @router.get("/seed-types", response_model=SeedTypesResponse,

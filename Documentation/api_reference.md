@@ -337,6 +337,7 @@ district size and why the R² ≥ 0.70 target is unreachable with this data,
 | Endpoint | Returns |
 |---|---|
 | `GET /api/v1/reference/districts` | The 51 districts the model knows, and the seasons available. |
+| `GET /api/v1/reference/district-map` | Each district's location (median plot GPS, since no boundary file exists) and historical mean yield, plus the Kenya bounding box every GPS pair was validated against and the yield range for a colour scale. Built by `scripts/build_district_geo.py` into `data/api/district_geo.json`. Used by the frontend map view; there is no polygon here, so a filled-region look is the frontend's own tessellation of these points. |
 | `GET /api/v1/reference/seed-types` | Seed categories, varieties, primary varieties, intercrop species. |
 | `GET /api/v1/reference/input-schema` | Every accepted field with type, unit, allowed values and observed range — enough to build and validate a form. |
 | `GET /api/v1/reference/levers` | The eight controllable levers `/recommend` can advise on, each with its fitted curve shape and whether it matches its agronomic prior. |
@@ -372,6 +373,17 @@ python scripts/build_lever_curves.py
 Also pandas and numpy only. Unlike the fill values this artefact **is**
 target-derived — it is a set of regression coefficients — so it must be refit,
 not carried forward, whenever the feature file changes.
+
+`data/api/district_geo.json` (~15 KB) holds each district's median plot GPS
+and historical mean yield, read by `GET /api/v1/reference/district-map`.
+
+```bash
+python scripts/build_district_geo.py
+```
+
+Pandas and numpy only, reading straight from
+`data/cleaned/kenya_maize_cleaned.csv`. Rebuild it whenever the cleaned table
+changes.
 
 ---
 

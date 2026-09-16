@@ -57,6 +57,13 @@ export const IconDocs = (p) => (
   </svg>
 )
 
+export const IconInsurance = (p) => (
+  <svg {...base} {...p}>
+    <path d="M12 3.5 5 6v6c0 4.5 2.9 7.7 7 8.5 4.1-.8 7-4 7-8.5V6Z" />
+    <path d="m9.3 12 1.9 1.9L15 10" />
+  </svg>
+)
+
 export const IconMaize = (p) => (
   <svg {...base} strokeWidth={1.5} {...p}>
     <path d="M12 21c0-5 0-9 0-12" />

@@ -7,18 +7,11 @@ baseline_mean, actual_mean) for a single season, 2020.
 
 WHY 2020 AND WHY district_v1, NOT THE LIVE district_v2 MODEL
 ---------------------------------------------------------------
-Insurance pricing needs an honestly out-of-sample forecast -- a model that has not already
-seen the outcome it is pricing. data/models/district_v1 was trained on 2016-2019 with 2020
-held out as its test season (see Documentation/kenya_maize_district_model_deployment.md), so
-its 2020 predictions are the one genuinely out-of-time district-season forecast this project
-has. Every other year (2016-2019) was part of v1's training set, and district_v2 -- the
-model api/registry.py actually serves live, trained on 2016-2020 -- saw 2020 too. Pricing off
+Insurance pricing needs an honestly out-of-sample forecast -- a model that has not already seen the outcome it is pricing. data/models/district_v1 was trained on 2016-2019 with 2020
+held out as its test season, so its 2020 predictions are the one genuinely out-of-time district-season forecast this project has. Every other year (2016-2019) was part of v1's training set, and district_v2 -- the model api/registry.py actually serves live, trained on 2016-2020 -- saw 2020 too. Pricing off
 either would be pricing off a forecast the model had already memorized the answer to.
 
-This is therefore a fixed, single-season artefact rather than a live "forecast next season"
-endpoint. Pricing a genuinely future season (2021+) is a different, harder problem -- it needs
-a weather forecast or climatology-based approach, not this survey model -- and is out of scope
-here; see scripts/price_area_yield_insurance.py's docstring for the same caveat.
+This is therefore a fixed, single-season artefact rather than a live "forecast next season" endpoint.
 
 CONSUMED BY
 -----------

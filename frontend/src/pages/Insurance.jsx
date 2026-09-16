@@ -256,14 +256,7 @@ export default function Insurance() {
         {calcRows && (
           <>
             <div className="divider" />
-            <div className="grid grid-3">
-              <div>
-                <div className="tiny">District average</div>
-                <div style={{ fontSize: '1.3rem', fontWeight: 700 }}>
-                  {kg(calcRows.priceRow.baseline_mean * areaHa)}
-                  <span className="stat-unit"> kg</span>
-                </div>
-              </div>
+            <div className="grid grid-2">
               <div>
                 <div className="tiny">Sum insured</div>
                 <div style={{ fontSize: '1.3rem', fontWeight: 700 }}>{kes(sumInsured)}</div>

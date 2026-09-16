@@ -3,15 +3,14 @@ import { useEffect, useState } from 'react'
 import { api } from '../lib/api'
 import { isOnline, useOnline, useReference, useTheme } from '../lib/hooks'
 import {
-  IconAdvisor, IconDocs, IconForecast, IconHome, IconMaize, IconModel, IconMoon, IconSun,
+  IconAdvisor, IconForecast, IconHome, IconInsurance, IconMaize, IconMoon, IconSun,
 } from './Icons'
 
 const NAV = [
   { to: '/', label: 'Overview', Icon: IconHome, end: true },
   { to: '/forecast', label: 'Forecast', Icon: IconForecast },
   { to: '/advisor', label: 'Advisor', Icon: IconAdvisor },
-  { to: '/model', label: 'Model', Icon: IconModel },
-  { to: '/docs', label: 'Docs', Icon: IconDocs },
+  { to: '/insurance', label: 'Insurance', Icon: IconInsurance },
 ]
 
 /** Live service state: what the API says about itself, polled gently. */

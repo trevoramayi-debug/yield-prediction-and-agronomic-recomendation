@@ -58,6 +58,14 @@ class Settings:
             "LEVER_CURVES_PATH",
             str(self.root / "data" / "api" / "lever_curves.json")))
 
+        # Precomputed district-season stats for area-yield insurance pricing
+        # (built offline by scripts/build_insurance_pricing_artifact.py, since
+        # it needs the full historical plot-level frame this service does not
+        # ship). Small and committed, same rationale as lever_curves_path.
+        self.insurance_pricing_path = Path(os.getenv(
+            "INSURANCE_PRICING_PATH",
+            str(self.root / "data" / "api" / "insurance_pricing.json")))
+
         # Gates a recommendation must clear before it is offered at all.
         self.min_lift_kg_ph = float(os.getenv("MIN_LIFT_KG_PH", "25"))
         self.min_lift_z = float(os.getenv("MIN_LIFT_Z", "1.645"))

@@ -138,4 +138,15 @@ export const api = {
         include_curve: includeCurve,
       },
     }),
+
+  /** Area-yield insurance premium estimate per district, priced live from the
+   *  precomputed 2020 stats at the given trigger and loading. Internal tool —
+   *  see frontend/src/pages/Insurance.jsx. */
+  insuranceDistricts: ({ triggerPct = 0.8, loadingPct = 0.25 } = {}) =>
+    request(`/api/v1/insurance/districts?trigger_pct=${triggerPct}&loading_pct=${loadingPct}`),
+
+  /** Area-yield insurance settlement (backtest): what each district's contract
+   *  would actually have paid, against its real measured 2020 yield. */
+  insurancePayouts: ({ triggerPct = 0.65, pricePerKg = 50 } = {}) =>
+    request(`/api/v1/insurance/payouts?trigger_pct=${triggerPct}&price_per_kg=${pricePerKg}`),
 }

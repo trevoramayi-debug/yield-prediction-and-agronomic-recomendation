@@ -258,9 +258,9 @@ export default function Insurance() {
             <div className="divider" />
             <div className="grid grid-3">
               <div>
-                <div className="tiny">Trigger yield</div>
+                <div className="tiny">District average</div>
                 <div style={{ fontSize: '1.3rem', fontWeight: 700 }}>
-                  {kg(calcRows.priceRow.trigger_yield * areaHa)}
+                  {kg(calcRows.priceRow.baseline_mean * areaHa)}
                   <span className="stat-unit"> kg</span>
                 </div>
               </div>

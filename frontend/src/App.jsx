@@ -5,6 +5,7 @@ import Forecast from './pages/Forecast'
 import Advisor from './pages/Advisor'
 import Model from './pages/Model'
 import Docs from './pages/Docs'
+import Insurance from './pages/Insurance'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="advisor" element={<Advisor />} />
         <Route path="model" element={<Model />} />
         <Route path="docs" element={<Docs />} />
+        <Route path="insurance" element={<Insurance />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

@@ -8,6 +8,12 @@ export const signed = (v, digits = 0) =>
 
 export const pct = (v, digits = 0) => (v == null ? '—' : `${(v * 100).toFixed(digits)}%`)
 
+/** A KES amount, e.g. an insurance payout or premium. */
+export const kes = (v, digits = 0) =>
+  v == null || Number.isNaN(v)
+    ? '—'
+    : `KES ${Number(v).toLocaleString('en-KE', { maximumFractionDigits: digits })}`
+
 export const r2 = (v) => (v == null ? '—' : (v >= 0 ? '+' : '−') + Math.abs(v).toFixed(3))
 
 /** district slugs are lower_snake in the data; show them as words. */
